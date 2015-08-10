@@ -40,6 +40,6 @@ class root::login {
         }
 # Mac OS X doesn't support root logins at all by default.
         'Darwin': {}
-        default: { unimplemented() }
+        default: { fail "unimplemented on ${::osfamily}" }
     }
 }
