@@ -89,5 +89,6 @@ class root::stig($bashrc_variant='default') {
         source => "puppet:///modules/root/bashrc.${bashrc_variant}",
     }
 
-    include "root::stig::${::osfamily}"
+    $lower_osfamily = downcase($::osfamily)
+    include "root::stig::${lower_osfamily}"
 }

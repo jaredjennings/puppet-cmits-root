@@ -17,5 +17,6 @@
 #
 
 class root::only_uid_0 {
-    include "root::only_uid_0::${::osfamily}"
+    $lower_osfamily = downcase($::osfamily)
+    include "root::only_uid_0::${lower_osfamily}"
 }
