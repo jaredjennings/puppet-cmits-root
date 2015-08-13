@@ -31,7 +31,7 @@ class root::login {
 # \implements{rhel5stig}{GEN000000-LNX00620,GEN000000-LNX00640,GEN000000-LNX00660}%
 # Control ownership and permissions on the \verb!securetty! file.
             file { "/etc/securetty":
-                owner => root, group => 0, mode => 0600,
+                owner => root, group => 0, mode => '0600',
                 source => "puppet:///modules/root/login/securetty",
             }
 # Interestingly, there appears to be no STIG requirement to remove extended

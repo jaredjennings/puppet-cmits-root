@@ -46,7 +46,7 @@ class root::stig($bashrc_variant='default') {
             file { "/root":
                 owner => root,
                 group => 0,
-                mode => 0700,
+                mode => '0700',
             }
             no_ext_acl { "/root": }
         }
@@ -58,7 +58,7 @@ class root::stig($bashrc_variant='default') {
             file { "$::root_home":
                 owner => root,
                 group => 0,
-                mode => 0700,
+                mode => '0700',
             }
 # \implements{unixsrg}{GEN000930}%
 # Remove extended ACLs from root's home directory.
@@ -85,7 +85,7 @@ class root::stig($bashrc_variant='default') {
 # \verb!LD_LIBRARY_PATH!, and \verb!LD_PRELOAD! environment variables are
 # secure, and that no world-writable directories are on root's \verb!PATH!.
     file { "${::root_home}/.bashrc":
-        owner => root, group => 0, mode => 0640,
+        owner => root, group => 0, mode => '0640',
         source => "puppet:///modules/root/bashrc.${bashrc_variant}",
     }
 
